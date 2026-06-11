@@ -1,4 +1,3 @@
-%global uuid pomodoro@arun.codito.in
 %global forgeurl https://github.com/focustimerhq/FocusTimer
 
 Version:        1.1.2
@@ -9,10 +8,10 @@ Version:        1.1.2
 Epoch:          1
 Name:           focustimer
 Release:        %autorelease
-Summary:        A time management utility for GNOME
+Summary:        Work with regular breaks
 
 License:        GPL-3.0-or-later
-URL:            https://gnomepomodoro.org/
+URL:            https://github.com/focustimerhq/FocusTimer
 Source0:        %forgesource
 
 BuildRequires:  meson
@@ -21,7 +20,6 @@ BuildRequires:  vala
 BuildRequires:  gettext
 BuildRequires:  intltool
 BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(appindicator3-0.1)
 BuildRequires:  pkgconfig(appstream-glib)
 BuildRequires:  pkgconfig(bash-completion)
 BuildRequires:  pkgconfig(cairo)
@@ -39,14 +37,11 @@ BuildRequires:  pkgconfig(gtk4-wayland)
 BuildRequires:  pkgconfig(gtk4-x11)
 BuildRequires:  pkgconfig(json-glib-1.0)
 BuildRequires:  pkgconfig(libadwaita-1)
-BuildRequires:  pkgconfig(libcanberra)
 BuildRequires:  pkgconfig(libpeas-2)
 BuildRequires:  pkgconfig(pangocairo)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(wayland-client)
 
-# For gnome shell extension part of gnome-pomodoro
-Requires:       gnome-shell >= 40.0
 Requires:       hicolor-icon-theme
 # For /usr/share/dbus-1/services ownership
 Requires:       dbus-common
@@ -60,17 +55,8 @@ Provides:       gnome-pomodoro = %{epoch}:%{version}-%{release}
 Obsoletes:      gnome-pomodoro < 1:0.28.0-5
 
 %description
-This GNOME app helps to manage time according to Pomodoro Technique. It intends
-to improve productivity and quality of work by reminding you to take short
-breaks.
-
-Pomodoro Technique is based on two principles:
-
-- focusing on work for limited time, about half an hour,
-- clearing your mind during breaks.
-
-This workflow can improve focus, physical health and mental agility depending
-on how you spend your breaks and how strictly you follow the routine.
+A productivity timer that helps you work more effectively by breaking your time into focused work sessions followed by short breaks.
+Work for 25 minutes, then take a 5-minute break to maintain concentration and prevent burnout.
 
 %prep
 %forgesetup
