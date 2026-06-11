@@ -7,9 +7,9 @@ Version:        1.1.2
 %forgemeta
 
 Epoch:          1
-Name:           focustimer
+Name:           focus-timer
 Release:        %autorelease
-Summary:        A time management utility for GNOME
+Summary:        A time-management app built around the Pomodoro Technique
 
 License:        GPL-3.0-or-later
 URL:            https://gnomepomodoro.org/
@@ -82,13 +82,13 @@ on how you spend your breaks and how strictly you follow the routine.
 %install
 %meson_install
 
-%find_lang focus-timer
+%find_lang %{name}
 
 %check
 desktop-file-validate %{buildroot}/%{_datadir}/applications/io.github.focustimerhq.FocusTimer.desktop
 appstreamcli validate --no-net %{buildroot}/%{_datadir}/metainfo/io.github.focustimerhq.FocusTimer.metainfo.xml
 
-%files -f focus-timer.lang
+%files -f %{name}.lang
 %doc README.md NEWS
 %license COPYING
 %{_bindir}/focus-timer
